@@ -8,6 +8,7 @@ import {BlockDataset} from "@/types/block-dataset";
 import {TraitConfiguration} from "@/utils/trait-configuration";
 import {Theme} from "@/types/theme";
 import {useScreenshotOnBlockIdChange} from "@/components/useScreenshotOnBlockIdChange";
+import {font} from "@/constants/font";
 
 export type MainSceneProps = {
   parsedBlock: BlockDataset,
@@ -40,7 +41,7 @@ export const MainScene = memo((props: MainSceneProps) => {
       </mesh>
       <Text
         fillOpacity={isDarkMode ? 0.5 : 0.8}
-        font={'/RetrcadeRegular.ttf'}
+        font={font}
         position={new Vector3(-3, platformPosition.y + 0.51, 0)}
         scale={[2, 2, 2]}
         rotation={new Euler(-Math.PI / 2, 0, -Math.PI / 2)}

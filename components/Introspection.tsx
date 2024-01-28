@@ -1,5 +1,5 @@
 'use client';
-import React, {Suspense, useEffect, useRef, useState} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 import {useControls} from "leva";
 import {Canvas} from "@react-three/fiber";
 import {Bounds, OrbitControls} from "@react-three/drei";
@@ -16,7 +16,6 @@ import {Theme} from "@/types/theme";
 
 export function Introspection() {
   const [parsedBlock, setParsedBlock] = useState<BlockDataset | undefined>(undefined);
-  const orbitControlRef = useRef<any>();
   const startBlock = 236425343;
   const endBlock = 236435967;
   const [blockId, setBlockId] = useState(startBlock);
@@ -107,7 +106,6 @@ export function Introspection() {
           ))}
         </Suspense>
         <OrbitControls
-          ref={orbitControlRef}
           enableRotate={false}
           enableZoom={false}
           enablePan={false}

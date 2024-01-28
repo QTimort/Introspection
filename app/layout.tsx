@@ -1,7 +1,7 @@
 import '@/styles/global.css'
 import 'tailwindcss/tailwind.css'
 export const metadata = {
-  title: 'Introspection',
+  title: 'Introspection by Timort',
   description: 'Introspection Art',
 }
 

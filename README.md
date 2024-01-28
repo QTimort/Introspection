@@ -1,4 +1,4 @@
-# Introspection
+# Introspection by Timort
 
 <img src="https://github.com/QTimort/Introspection/blob/master/public/block_236426968.png" alt="Instrospection Block 236426968" width="512"/>
 
