@@ -5,11 +5,7 @@ export const metadata = {
   description: 'Introspection Art',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en" className={''}>
       <body className={'flex justify-center items-center h-screen bg-neutral-900 w-screen'}>

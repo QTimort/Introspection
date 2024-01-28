@@ -87,7 +87,7 @@ export function getTraitConfiguration(block: BlockDataset): TraitConfiguration {
 
 export function selectWeightedItem<T extends Record<keyof T, number>>(items: T, number: number): keyof T {
   if (number < 0 || number >= 10000) {
-    throw new Error("Random number must be between 0 and 9999.");
+    throw new Error("Number must be between 0 and 9999.");
   }
   const entries = Object.entries(items) as [keyof T, number][];
 

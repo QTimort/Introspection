@@ -24,15 +24,13 @@ export const palettes: { [key in PaletteName]: string[]} =
     [PaletteName.AE86] : ['#4a4a4a', '#e6e6e6'],
     [PaletteName.SKY] : ['#dcd9d9', '#6cb0e6'],
     [PaletteName.PASTEL_SUNSET] : ['#7071E8', '#C683D7', '#ED9ED6', '#FFC7C7'],
-    [PaletteName.LAPIS_LAZULI] : ['#3d455b', '#485380', '#505b91',
-      '#5c66d0', '#94a8fd'],
+    [PaletteName.LAPIS_LAZULI] : ['#3d455b', '#485380', '#505b91', '#5c66d0', '#94a8fd'],
     [PaletteName.MIRROR_EDGE] : ['#2a49a2', '#227cf2', '#a1bec2', '#fdc384', '#de7334', '#e0505f'],
     [PaletteName.BLADE_RUNNER] : [ '#394465',  '#416bb0', '#3c89e9', '#8460c2', '#9d5bbd', '#dc68b5'],
     [PaletteName.RETRO_PASTEL] : ['#e55d5a', '#e1714c', '#ffaa70', '#67b19d', '#08769a', '#fedbbc'],
     [PaletteName.EMERALD] : ['#84b08d', '#629473', '#477e5e', '#2f6742', '#0a5133'],
     [PaletteName.FIDENZA] : ['#7ca9bf', '#ebe4d8', '#db4f54', '#fcbc19', '#543e2e', '#29a691'],
-    [PaletteName.VAN_GOGH] : ['#2b449a', '#4b73a7', '#bec075',
-      '#bfa603', '#2e3d48'],
+    [PaletteName.VAN_GOGH] : ['#2b449a', '#4b73a7', '#bec075', '#bfa603', '#2e3d48'],
     [PaletteName.HENRI_MATISSE] : ['#f8c99b', '#64ae99', '#ef967b', '#e87e70', '#e4d0c4', '#7d798e', '#45587d', '#e3dee1'],
     [PaletteName.CLAUDE_MONET] : ['#49676b', '#7aa2b0', '#465079', '#4275b6', '#dcbd71'],
     [PaletteName.WATER_LILLY] : ['#24476e', '#6789b4', '#8bab7b', '#689367', '#bd859f'],
@@ -46,7 +44,11 @@ export const palettes: { [key in PaletteName]: string[]} =
     [PaletteName.BTC] : ['#ff9900'],
 };
 
-export const heatInstructionSizePalettes = [PaletteName.HENRI_MATISSE, PaletteName.RETRO_PASTEL, PaletteName.AURORA_GARDEN];
+export const heatInstructionSizePalettes = [
+  PaletteName.HENRI_MATISSE,
+  PaletteName.RETRO_PASTEL,
+  PaletteName.AURORA_GARDEN
+];
 
 export const palettesWeight: { [key in PaletteName]: number} = {
   [PaletteName.APAB]: 512,

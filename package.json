@@ -2,9 +2,9 @@
   "name": "introspection",
   "description": "Introspection",
   "version": "1.0.42",
-  "private": true,
+  "private": false,
   "author": "Timort",
-  "license": "GNU V3",
+  "license": "GPL-3.0-only",
   "keywords": [
     "art",
     "block",
@@ -49,6 +49,7 @@
     "postcss": "^8.4.32",
     "prettier": "3.1.1",
     "tailwindcss": "^3.4.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "webpack": "^5.90.0"
   }
 }

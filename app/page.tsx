@@ -1,15 +1,19 @@
-import Head from 'next/head'
 import { Introspection } from '@/components/Introspection'
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: 'Introspection',
+  applicationName: 'Introspection',
+  icons: {
+    icon: '/favicons/favicon.png',
+  },
+}
 
 export default function Home() {
   return (
     <div className={''}>
-      <Head>
-        <title>Introspection</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className="">
-        <Introspection />
+        <Introspection/>
       </main>
     </div>
   )

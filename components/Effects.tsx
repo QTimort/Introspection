@@ -1,17 +1,15 @@
-import {Bloom, BrightnessContrast, EffectComposer, N8AO, Noise} from '@react-three/postprocessing'
+import {Bloom, BrightnessContrast, EffectComposer, N8AO} from '@react-three/postprocessing'
 import React from "react";
 
-export function Effects() {
-  // todo change according to resolution
-  const is4k = true;
+export interface EffectsProps {
+  is4k?: boolean;
+}
+export function Effects(props: EffectsProps) {
   return (
     <EffectComposer multisampling={16} autoClear={false}>
       <Bloom
-        //blendFunction={BlendFunction.ADD}
-        mipmapBlur luminanceSmoothing={0.5} opacity={0.5} luminanceThreshold={1.1} intensity={is4k ? 1.75 : 1}
-        blurPass={undefined} // A blur pass.
-        //blendFunction={BlendFunction.ADD}
-        //blendFunction={BlendFunction.AVERAGE}
+        mipmapBlur luminanceSmoothing={0.5} opacity={0.5} luminanceThreshold={1.1} intensity={props.is4k ? 1.75 : 1}
+        blurPass={undefined}
         radius={0.5}
         levels={8}
       />

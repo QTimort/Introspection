@@ -21,10 +21,6 @@ export function getColorForWavePattern<T>(x: number, y: number, colors: T[], wav
 export function getColorForStripeAnglePattern<T>(
   x: number, y: number, colors: T[], angle: number, stripeWidth: number
 ): T {
-  if (colors.length === 0) {
-    throw new Error("Color array is empty.");
-  }
-
   const angleRad = angle * Math.PI / 180;
 
   const rotatedX = x * Math.cos(angleRad) - y * Math.sin(angleRad);
@@ -47,10 +43,6 @@ export function getColorForStripeAnglePattern<T>(
 export function getColorForSquigglyPattern<T>(
   x: number, y: number, colors: T[], angle: number, stripeWidth: number, squiggleFrequency: number, squiggleAmplitude: number
 ): T {
-  if (colors.length === 0) {
-    throw new Error("Color array is empty.");
-  }
-
   const angleRad = angle * Math.PI / 180;
 
   const rotatedX = x * Math.cos(angleRad) - y * Math.sin(angleRad);
@@ -102,7 +94,7 @@ export function getYingYangPattern<T>(x: number, y: number, colors: T[], gridSiz
   if (r < gridSize / 2) {
     const angleOffset = r / spiralDensity;
     let colorIndex = Math.floor((theta + angleOffset) / (2 * Math.PI) * colors.length);
-    colorIndex = Math.abs(colorIndex) % colors.length; // Ensure index is within range
+    colorIndex = Math.abs(colorIndex) % colors.length;
     return colors[colorIndex];
   }
 

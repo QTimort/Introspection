@@ -20,7 +20,8 @@ export type MainSceneProps = {
 
 export const MainScene = memo((props: MainSceneProps) => {
   const material = props.beautiful ? physicalMaterial: basicMaterial;
-  const {platformSize, platformPosition, blockRenderData} = computeBlockRenderData(props.parsedBlock, props.traitConfiguration);
+  const {platformSize, platformPosition, blockRenderData} =
+    computeBlockRenderData(props.parsedBlock, props.traitConfiguration);
 
   useScreenshotOnBlockIdChange(props.parsedBlock, props.increaseId, props.render);
 

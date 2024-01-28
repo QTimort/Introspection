@@ -62,7 +62,6 @@ export function Introspection() {
   }
 
   useEffect(() => {
-    //paletteDistributionTest(startBlock, endBlock);
     (async () => {
       try {
         const parsedBlocks = await parseDataset(blockId + '.json');
@@ -86,8 +85,13 @@ export function Introspection() {
         orthographic
       >
         <color attach="background" args={[isDarkMode ? '#1c1c1c' : '#ffffff']}/>
-        <hemisphereLight position={new Vector3(-100,1000,200)} intensity={4} color={'#ffffff'} groundColor={'#8c8c8c'}/>
-        <Effects/>
+        <hemisphereLight
+          position={new Vector3(-100,1000,200)}
+          intensity={4}
+          color={'#ffffff'}
+          groundColor={'#8c8c8c'}
+        />
+        <Effects is4k={true}/>
         <Suspense fallback={null}>
           {((parsedBlock && traitConfiguration) && (
             <Bounds maxDuration={0} fit clip observe margin={1.1}>
