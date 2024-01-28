@@ -10,7 +10,6 @@ import {Theme} from "@/types/theme";
 import {useScreenshotOnBlockIdChange} from "@/components/useScreenshotOnBlockIdChange";
 import {font} from "@/constants/font";
 import {useScreenshot} from "@/components/useScreenshot";
-import {font} from "@/constants/font";
 
 export type MainSceneProps = {
   parsedBlock: BlockDataset,
