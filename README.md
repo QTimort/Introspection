@@ -40,7 +40,7 @@ Coming soon...
 2. Follow the [generation tutorial](https://github.com/QTimort/Introspection/blob/interactive-html-version/bundle.md)
 
 ## Generate the NFT's metadata
-1. Checkout the [interactive-html-version](https://github.com/QTimort/Introspection/tree/interactive-html-version) branch
+1. Checkout the [metadata-generation](https://github.com/QTimort/Introspection/tree/metadata-generation) branch
 2. Follow the [metadata-generation](https://github.com/QTimort/Introspection/blob/metadata-generation/metadata.md)
 
 ## 📝 License
