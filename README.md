@@ -49,7 +49,7 @@ This project is licensed under the GNU V3 License - see the [LICENSE](LICENSE) f
 
 ---
 
-Made with by Timort - [@TimortUnchained](https://twitter.com/TimortUnchained)
+Made by Timort - [@TimortUnchained](https://twitter.com/TimortUnchained)
 
 ![Twitter banner composed of three Art piece from Introspection](https://github.com/QTimort/Introspection/assets/25301692/c5c17ec8-0350-4dd4-864b-36b254bf63e1)
 > Twitter banner composed of three Art piece from Introspection.
