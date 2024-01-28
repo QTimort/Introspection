@@ -11,5 +11,5 @@ Steps
 6. Replace each remote CSS/JS files in the HTML by adding style/script tag. The compiled files are located at `.next/static`
 7. Look for any string "script" tag such as "<script>" or "</script>" and convert them to "<scr"+"ipt>" or "</scr"+"ipt>". Otherwise, it messes up the HTML parser.
 8. Replace the block json fetch by the json data of the block, search for "fetch(" since there is only one, it's easy to find.
-9. Lookup for the intensity value 1.75 and replace by 1.35
+9. Lookup for the intensity value 1.75 and replace by 1.35 because most viewers won't look at it in 4k
 9. Done, the HTML should be now bundled and standalone!

@@ -8,7 +8,8 @@ export function Effects(props: EffectsProps) {
   return (
     <EffectComposer multisampling={16} autoClear={false}>
       <Bloom
-        mipmapBlur luminanceSmoothing={0.5} opacity={0.5} luminanceThreshold={1.1} intensity={props.is4k ? 1.75 : 1}
+        // lower intensity than rendered png version because most viewers won't look at it in 4k
+        mipmapBlur luminanceSmoothing={0.5} opacity={0.5} luminanceThreshold={1.1} intensity={props.is4k ? 1.35 : 1}
         blurPass={undefined}
         radius={0.5}
         levels={8}
