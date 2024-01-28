@@ -1,11 +1,6 @@
 'use client';
-import React, {Suspense, useEffect, useState} from "react";
+import React, { useEffect, useRef, useState} from "react";
 import {useControls} from "leva";
-import {Canvas} from "@react-three/fiber";
-import {Bounds, OrbitControls} from "@react-three/drei";
-import {Vector3} from "three";
-import {MainScene} from "@/components/MainScene";
-import {Effects} from "@/components/Effects";
 import {parseDataset} from "@/utils/parse-dataset";
 import {BlockDataset} from "@/types/block-dataset";
 import {getTraitConfiguration} from "@/utils/trait-configuration";
@@ -14,11 +9,17 @@ import {PaletteName} from "@/types/palette-name";
 import {patterns} from "@/constants/patterns";
 import {Theme} from "@/types/theme";
 
+type Attribute = {
+  trait_type: string;
+  value: string;
+};
+
 export function Introspection() {
   const [parsedBlock, setParsedBlock] = useState<BlockDataset | undefined>(undefined);
   const startBlock = 236425343;
   const endBlock = 236435967;
   const [blockId, setBlockId] = useState(startBlock);
+  const [metadatum, setMetadatum] = useState<{ [key: number]: Attribute[] }>({});
 
   const controls = useControls({
     blockId: {
@@ -40,6 +41,55 @@ export function Introspection() {
     render: false,
   });
   const traitConfiguration = parsedBlock ? getTraitConfiguration(parsedBlock) : undefined;
+  const nbMintAttempt = parsedBlock?.processedTransactions.filter(t => t.isMintAttempt).length || 0;
+  const nbError = parsedBlock?.processedTransactions.filter(t => t.isError).length || 0;
+  const nbTransaction = parsedBlock?.processedTransactions.length || 0;
+
+  const attributes: Attribute[] = [
+    {
+      "trait_type": "Block",
+      "value": parsedBlock?.meta.blockSlot.toString() || ""
+    },
+    {
+      "trait_type": "Mint Attempts",
+      "value": nbMintAttempt.toString() || ""
+    },
+    {
+      "trait_type": "Failed Transactions",
+      "value": nbError.toString() || ""
+    },
+    {
+      "trait_type": "Transactions",
+      "value": nbTransaction.toString() || ""
+    },
+    {
+      "trait_type": "Introspection Theme",
+      "value": traitConfiguration?.theme || ""
+    },
+    {
+      "trait_type": "Introspection Palette",
+      "value": traitConfiguration?.palette || ""
+    },
+    {
+      "trait_type": "Introspection Pattern",
+      "value": traitConfiguration?.pattern || ""
+    },
+  ];
+
+  if (parsedBlock?.meta?.blockSlot && traitConfiguration && !metadatum[parsedBlock.meta.blockSlot]) {
+    setMetadatum(prev => ({
+      ...prev,
+      [parsedBlock.meta.blockSlot]: attributes
+    }))
+  }
+
+  if (blockId % 100 === 0 || blockId === endBlock) {
+    console.log(Object.keys(metadatum).length);
+  }
+
+  if (blockId === endBlock) {
+    console.log(metadatum);
+  }
 
   if (traitConfiguration) {
     traitConfiguration.palette = controls.ovrPalette ? controls.palette : traitConfiguration.palette;
@@ -76,47 +126,15 @@ export function Introspection() {
     setBlockId(controls.blockId)
   }, [controls.blockId]);
 
+  useEffect(() => {
+    if (controls.render) {
+      tryIncrementId();
+    }
+  }, [metadatum, controls.render]);
+
   return (
     <div className='w-[4096px] h-[4096px]'>
-      <Canvas
-        gl={{ preserveDrawingBuffer: true, antialias: true }}
-        dpr={[1, 2]}
-        orthographic
-      >
-        <color attach="background" args={[isDarkMode ? '#1c1c1c' : '#ffffff']}/>
-        <hemisphereLight
-          position={new Vector3(-100,1000,200)}
-          intensity={4}
-          color={'#ffffff'}
-          groundColor={'#8c8c8c'}
-        />
-        <Effects is4k={true}/>
-        <Suspense fallback={null}>
-          {((parsedBlock && traitConfiguration) && (
-            <Bounds maxDuration={0} fit clip observe margin={1.1}>
-              <MainScene
-                traitConfiguration={traitConfiguration}
-                beautiful={true}
-                position={new Vector3()}
-                parsedBlock={parsedBlock}
-                increaseId={tryIncrementId}
-                render={controls.render}
-              />
-            </Bounds>
-          ))}
-        </Suspense>
-        <OrbitControls
-          enableRotate={false}
-          enableZoom={false}
-          enablePan={false}
-          enableDamping={false}
-          makeDefault
-          minDistance={0}
-          maxDistance={Infinity}
-          minPolarAngle={Math.PI / 4.5}
-          maxPolarAngle={Math.PI / 4.5}
-        />
-      </Canvas>
+
     </div>
   );
 }
