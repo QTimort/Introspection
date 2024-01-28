@@ -39,3 +39,5 @@ yarn-error.log*
 public/assets/processed-blocks
 
 upload/
+
+htmls/
