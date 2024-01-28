@@ -37,11 +37,11 @@ Coming soon...
 
 ## Generate the NFT's interactive HTML
 1. Checkout the [interactive-html-version](https://github.com/QTimort/Introspection/tree/interactive-html-version) branch
-2. Follow the [generation tutorial](https://github.com/QTimort/Introspection/blob/interactive-html-version/bundle.md
+2. Follow the [generation tutorial](https://github.com/QTimort/Introspection/blob/interactive-html-version/bundle.md)
 
 ## Generate the NFT's metadata
 1. Checkout the [interactive-html-version](https://github.com/QTimort/Introspection/tree/interactive-html-version) branch
-2. Follow the [metadata-generation](https://github.com/QTimort/Introspection/blob/metadata-generation/metadata.md
+2. Follow the [metadata-generation](https://github.com/QTimort/Introspection/blob/metadata-generation/metadata.md)
 
 ## 📝 License
 
