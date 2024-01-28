@@ -1,6 +1,6 @@
 # Introspection
 
-<img src="(https://github.com/QTimort/Introspection/blob/master/public/block_236426968.png?raw=true" alt="Instrospection Block 236426968" width="512"/>
+<img src="https://github.com/QTimort/Introspection/blob/master/public/block_236426968.png" alt="Instrospection Block 236426968" width="512"/>
 
 [View in Fullscreen](https://github.com/QTimort/Introspection/blob/master/public/block_236426968.png?raw=true)
 
