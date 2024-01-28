@@ -10,6 +10,7 @@ import {Theme} from "@/types/theme";
 import {useScreenshotOnBlockIdChange} from "@/components/useScreenshotOnBlockIdChange";
 import {font} from "@/constants/font";
 import {useScreenshot} from "@/components/useScreenshot";
+import {font} from "@/constants/font";
 
 export type MainSceneProps = {
   parsedBlock: BlockDataset,
@@ -48,7 +49,7 @@ export const MainScene = memo((props: MainSceneProps) => {
     if (event.key === 'r' || event.key === 'R') {
       resetCamera();
     }
-    if (event.key === 'm' || event.key === 'M') {
+    if (event.key === 'l' || event.key === 'L') {
       resetCamera();
     }
   };
