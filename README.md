@@ -17,10 +17,11 @@ And the black blocks? They're the quiet ones, representing transactions failed o
 ## 🎨 Behind the Art
 https://www.notion.so/timort/Introspection-cfd317bfff9746f48a4f407460dcf506
 
-## 🚀 View the Art
+## 🚀 Build & Run Introspection
 
 1. `yarn install`
-2. `yarn dev`
+2. `yarn build`
+3. `yarn start`
 
 To view the project open `http://localhost:3000`.
 
@@ -31,6 +32,16 @@ To view the project open `http://localhost:3000`.
 - ThreeJS
 - TailWind CSS
 
+## Generate the dataset
+Coming soon...
+
+## Generate the NFT's interactive HTML
+1. Checkout the [interactive-html-version](https://github.com/QTimort/Introspection/tree/interactive-html-version) branch
+2. Follow the [generation tutorial](https://github.com/QTimort/Introspection/blob/interactive-html-version/bundle.md
+
+## Generate the NFT's metadata
+1. Checkout the [interactive-html-version](https://github.com/QTimort/Introspection/tree/interactive-html-version) branch
+2. Follow the [metadata-generation](https://github.com/QTimort/Introspection/blob/metadata-generation/metadata.md
 
 ## 📝 License
 
